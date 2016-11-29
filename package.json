@@ -1,0 +1,23 @@
+{
+  "name": "HomeSession_2",
+  "version": "1.0.0",
+  "description": "BootCamp day 2",
+  "main": "app/words.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test_words": "mocha tests/words.js",
+    "test_maxmin": "mocha tests/maxmin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centia28/HomeSession_1.git"
+  },
+  "author": "Nina Tchalla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/centia28/HomeSession_1/issues"
+  },
+  "homepage": "https://github.com/centia28/HomeSession_1#readme"
+}
