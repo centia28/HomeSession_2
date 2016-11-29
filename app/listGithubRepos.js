@@ -1,28 +1,19 @@
 function listGithubRepos(username){
-  var request     = require('superagent/superagent');
-  
-  var repos = [] ;
-
-  //retrieve repos
-  
-  request
-    .get('https://api.github.com/users/'+username+'repos')
-    .set('Accept', 'application/json')
-    .end(function(err,res){
-      if((res.status == 200) && !err){
-        var ans = (res.body);
-        if (ans.length == 0){
-          return 'no repository';
+  var request = require('request');
+  request('https://api.github.com/users/'+username+'repos',function(error,response,body){
+      if(response.statusCode == 200){
+        if (body.length == 0){
+          console.log('no repository');
         } else{
-          for(var i=0;i<ans.length;i++){
-            repos.push(ans[i].name);
+          for(var i=0;i<body.length;i++){
+            repos.push(body[i].name);
           };
         }
+      } else {
+        console.log('error: '+ response.statusCode)
       }
-      });
-
-    return(repos);
-
+    }
+  );
 }
 
 module.exports = listGithubRepos;
