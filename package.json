@@ -2,13 +2,14 @@
   "name": "HomeSession_2",
   "version": "1.0.0",
   "description": "BootCamp day 2",
-  "main": "app/words.js",
+  "main": "listGithubRepos.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test_words": "mocha tests/words.js",
-    "test_maxmin": "mocha tests/maxmin.js"
+    "test_maxmin": "mocha tests/maxmin.js",
+    "test_repos": "mocha tests/listGithubRepos.js"
   },
   "repository": {
     "type": "git",
