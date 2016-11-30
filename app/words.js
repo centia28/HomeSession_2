@@ -7,7 +7,7 @@ function words(word){
 	var expectedCount = {};
 	var temp = "";
 
-	for (var i = 0; i < word_splitted.length; i++) {
+	word_splitted.forEach(function(word) {
 		temp = (word_splitted[i]).trim();
 	  if (temp !== "") {
 	    if(expectedCount[temp] !== undefined){
@@ -16,7 +16,7 @@ function words(word){
   			expectedCount[temp] = 1;
 		  }	
 	  }
-	}
+	})
 
 	return expectedCount;
 }

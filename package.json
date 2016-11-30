@@ -9,7 +9,7 @@
   "scripts": {
     "test_words": "mocha tests/words.js",
     "test_maxmin": "mocha tests/maxmin.js",
-    "test_repos": "mocha tests/listGithubRepos.js"
+    "start": "node app/listGithubRepos.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/centia28/HomeSession_1/issues"
   },
-  "homepage": "https://github.com/centia28/HomeSession_1#readme"
+  "homepage": "https://github.com/centia28/HomeSession_1#readme",
+  "dependencies": {
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
 }

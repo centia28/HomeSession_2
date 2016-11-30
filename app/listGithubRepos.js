@@ -1,19 +1,29 @@
-function listGithubRepos(username){
-  var request = require('request');
-  request('https://api.github.com/users/'+username+'repos',function(error,response,body){
-      if(response.statusCode == 200){
-        if (body.length == 0){
-          console.log('no repository');
-        } else{
-          for(var i=0;i<body.length;i++){
-            repos.push(body[i].name);
-          };
-        }
-      } else {
-        console.log('error: '+ response.statusCode)
-      }
-    }
-  );
-}
+var request = require('request-promise');
 
-module.exports = listGithubRepos;
+var options = {
+    method: "GET",
+    uri: "https://api.github.com/users/centia28/repos",
+    headers: {
+        'User-Agent': 'Request-Promise'
+    },
+    json: true
+};
+
+request(options)
+    .then( function(response) {
+        // console.log(response);
+        response.forEach(function (repo) {
+          console.log("ID : ", repo.id);
+          console.log("NAME : ", repo.name);
+          console.log("FULL NAME : ", repo.full_name);
+          console.log("IS PRIVATE : ", repo.private);
+          console.log("URL : ", repo.html_url);
+          console.log("DESCRIPTION : ", repo.description);
+
+          console.log("\n");
+        })
+    })
+    .catch(function(error) {
+        console.log(error);
+    })
+;
